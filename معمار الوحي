@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>معمار الوحي | منصة الثقافة الإسلامية المعاصرة</title>
+  
+  <!-- الخطوط العربية الفاخرة من Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Reem+Kufi:wght@500;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome للأيقونات -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ==================== النمط العام والتأسيس السينمائي ==================== */
+    :root {
+      --bg-dark: #0A0F1D;
+      --bg-card: rgba(18, 26, 43, 0.85);
+      --gold-primary: #D4AF37;
+      --gold-light: #FFE680;
+      --text-white: #FFFFFF;
+      --text-muted: #B0C0D0;
+      
+      /* ألوان البوابات الست */
+      --gate1-color: #2B5B84; /* أزرق سماوي رزين */
+      --gate2-color: #A3524E; /* وردي/مرجاني هادئ */
+      --gate3-color: #3A6B53; /* أخضر ميرمية */
+      --gate4-color: #8A6D3B; /* ذهبي دافئ */
+      --gate5-color: #6B5282; /* بنفسجي لافندر */
+      --gate6-color: #9E6747; /* مشمشي دافئ */
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 100% 50%, rgba(43, 91, 132, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 0% 100%, rgba(107, 82, 130, 0.1) 0%, transparent 40%);
+      color: var(--text-muted);
+      font-family: 'Amiri', serif;
+      line-height: 1.8;
+      overflow-x: hidden;
+      padding-bottom: 80px;
+    }
+
+    /* ==================== الهيدر والشعار ==================== */
+    header {
+      text-align: center;
+      padding: 60px 20px 40px;
+      position: relative;
+    }
+
+    .logo-container {
+      max-width: 320px;
+      margin: 0 auto 20px;
+      filter: drop-shadow(0 10px 25px rgba(0,0,0,0.6));
+      transition: transform 0.4s ease;
+    }
+
+    .logo-container:hover {
+      transform: scale(1.03);
+    }
+
+    .logo-img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+    }
+
+    .site-slogan {
+      font-family: 'Reem Kufi', sans-serif;
+      font-size: 1.4rem;
+      color: var(--gold-light);
+      text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+      margin-bottom: 8px;
+    }
+
+    .supervisor {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* ==================== شريط البحث والتصفية ==================== */
+    .search-section {
+      max-width: 700px;
+      margin: 30px auto 50px;
+      padding: 0 20px;
+    }
+
+    .search-box {
+      position: relative;
+      width: 100%;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 16px 55px 16px 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 50px;
+      color: #fff;
+      font-size: 1.1rem;
+      font-family: 'Amiri', serif;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .search-box input:focus {
+      outline: none;
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .search-box i {
+      position: absolute;
+      right: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold-primary);
+      font-size: 1.3rem;
+    }
+
+    /* ==================== حاوية البوابات والمحاور ==================== */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .gate-block {
+      margin-bottom: 70px;
+    }
+
+    /* عنوان البوابة الفاخر */
+    .gate-title {
+      font-family: 'Reem Kufi', sans-serif;
+      font-size: 1.8rem;
+      color: #FFFFFF;
+      padding: 15px 25px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gate-title::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 8px;
+      height: 100%;
+      background: var(--gold-primary);
+    }
+
+    /* تخصيص ألوان البوابات الست */
+    .gate-1 .gate-title { background: linear-gradient(135deg, var(--gate1-color), rgba(15, 23, 42, 0.9)); border-right: 5px solid #4A90E2; }
+    .gate-2 .gate-title { background: linear-gradient(135deg, var(--gate2-color), rgba(15, 23, 42, 0.9)); border-right: 5px solid #E57373; }
+    .gate-3 .gate-title { background: linear-gradient(135deg, var(--gate3-color), rgba(15, 23, 42, 0.9)); border-right: 5px solid #81C784; }
+    .gate-4 .gate-title { background: linear-gradient(135deg, var(--gate4-color), rgba(15, 23, 42, 0.9)); border-right: 5px solid #FFB74D; }
+    .gate-5 .gate-title { background: linear-gradient(135deg, var(--gate5-color), rgba(15, 23, 42, 0.9)); border-right: 5px solid #BA68C8; }
+    .gate-6 .gate-title { background: linear-gradient(135deg, var(--gate6-color), rgba(15, 23, 42, 0.9)); border-right: 5px solid #FF8A65; }
+
+    /* شبكة الكروت للمحاور */
+    .axes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 30px;
+    }
+
+    /* كرت المحور السينمائي */
+    .axis-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 30px;
+      backdrop-filter: blur(15px);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    .axis-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(212, 175, 55, 0.4);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.15);
+    }
+
+    .axis-header {
+      margin-bottom: 20px;
+    }
+
+    .axis-badge {
+      display: inline-block;
+      font-size: 0.85rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--gold-light);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      margin-bottom: 12px;
+    }
+
+    /* عنوان المحور الأبيض الناصع مع ظل سينمائي */
+    .axis-title {
+      font-family: 'Scheherazade New', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #FFFFFF !important;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 0 1px #fff;
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+
+    .axis-description {
+      font-size: 1.05rem;
+      color: #D1D5DB;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    /* ==================== أقسام المحتوى (كتب - مقالات - مرئيات) ==================== */
+    .resources-tabs {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .resource-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 10px 6px;
+      color: var(--text-white);
+      font-family: 'Amiri', serif;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .resource-btn i {
+      font-size: 1.2rem;
+      color: var(--gold-primary);
+    }
+
+    .resource-btn:hover {
+      background: rgba(212, 175, 55, 0.2);
+      border-color: var(--gold-primary);
+      color: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .resource-count {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      background: rgba(0, 0, 0, 0.3);
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+
+    /* ==================== التذييل ==================== */
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      margin-top: 80px;
+      background: rgba(5, 8, 15, 0.9);
+    }
+
+    .footer-quran {
+      font-size: 1.4rem;
+      color: var(--gold-light);
+      margin-bottom: 15px;
+      font-family: 'Amiri', serif;
+    }
+
+    .footer-rights {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* responsive */
+    @media (max-width: 768px) {
+      .axes-grid { grid-template-columns: 1fr; }
+      .gate-title { font-size: 1.4rem; }
+      .axis-title { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- الهيدر الشعار الرئيسي -->
+  <header>
+    <div class="logo-container">
+      <img src="1963d82a4770dcfeab76746736bb1209~tplv-tiktokx-cropcenter_1080_1080 (1).jpeg" alt="معمار الوحي" class="logo-img" onerror="this.src='https://via.placeholder.com/300x300/0A0F1D/D4AF37?text=معمار+الوحي'">
+    </div>
+    <div class="site-slogan">«عَلَى بَصِيرَةِ العَقْلِ وَهِدَايَةِ الوَحْيِ — نَحْيَا كِرَامًا»</div>
+    <div class="supervisor">تحت إشراف الأستاذ الباحث: رماضنة عبد العزيز</div>
+  </header>
+
+  <!-- شريط البحث الحي -->
+  <section class="search-section">
+    <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="searchInput" placeholder="ابحث في محاور المنصة العشرين..." onkeyup="filterAxes()">
+    </div>
+  </section>
+
+  <!-- المحتوى الرئيسي للمحاور الـ 20 -->
+  <main class="container">
+
+    <!-- 🔵 البوابة الأولى -->
+    <div class="gate-block gate-1">
+      <div class="gate-title">
+        <i class="fa-solid fa-book-quran"></i>
+        <span>البوابة الأولى: الأصول والوحي المعصوم</span>
+      </div>
+      <div class="axes-grid">
+
+        <!-- المحور 1 -->
+        <div class="axis-card">
+          <div class="axis-header">
+            <span class="axis-badge">المحور الأول</span>
+            <h3 class="axis-title">رَوَاسِخُ العَقِيدَةِ</h3>
+            <p class="axis-description">بيان معتقدات أهل السنة والجماعة - التوحيد والأسماء والصفات - الأنبياء - اليوم الآخر - الصحابة مع الأدلة النقلية والشرعية الصحيحة، وتعزيز اليقين بثوابت الإسلام.</p>
+          </div>
+          <div class="resources-tabs">
+            <a href="#" class="resource-btn"><i class="fa-solid fa-book"></i> كتب ومراجع <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-file-lines"></i> مقالات وأبحاث <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-circle-play"></i> مرئيات ودروس <span class="resource-count">تصفح</span></a>
+          </div>
+        </div>
+
+        <!-- المحور 2 -->
+        <div class="axis-card">
+          <div class="axis-header">
+            <span class="axis-badge">المحور الثاني</span>
+            <h3 class="axis-title">مِعْمَارُ النَّصِّ القُرْآنِيِّ — «العقل في محراب الوحي»</h3>
+            <p class="axis-description">القرآن المعصوم: علومُه، إعجازُه، والرد المنهجي على المطاعن النصية والتاريخية. الحجاج الفكري للشبهات وإجابات عصرية لتفكيك أسئلة الشباب.</p>
+          </div>
+          <div class="resources-tabs">
+            <a href="#" class="resource-btn"><i class="fa-solid fa-book"></i> كتب ومراجع <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-file-lines"></i> مقالات وأبحاث <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-circle-play"></i> مرئيات ودروس <span class="resource-count">تصفح</span></a>
+          </div>
+        </div>
+
+        <!-- المحور 3 -->
+        <div class="axis-card">
+          <div class="axis-header">
+            <span class="axis-badge">المحور الثالث</span>
+            <h3 class="axis-title">مِعْمَارُ النَّصِّ النَّبَوِيِّ</h3>
+            <p class="axis-description">سفراء الوحي ودلائل النبوة، تفكيك المركزية النقدية للشبهات. السنة النبوية: صرامة علماء الحديث والإعجاز البلاغي والعلمي وتهافت الشبهات المعاصرة.</p>
+          </div>
+          <div class="resources-tabs">
+            <a href="#" class="resource-btn"><i class="fa-solid fa-book"></i> كتب ومراجع <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-file-lines"></i> مقالات وأبحاث <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-circle-play"></i> مرئيات ودروس <span class="resource-count">تصفح</span></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 🔴 البوابة الثانية -->
+    <div class="gate-block gate-2">
+      <div class="gate-title">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>البوابة الثانية: المواجهة الفكرية وهدم الشبهات</span>
+      </div>
+      <div class="axes-grid">
+
+        <!-- المحور 4 -->
+        <div class="axis-card">
+          <div class="axis-header">
+            <span class="axis-badge">المحور الرابع</span>
+            <h3 class="axis-title">فَضَائِحُ المُلَاحِدَةِ — «من نيتشه إلى أوهام داوكنز»</h3>
+            <p class="axis-description">فلسفة وتراجم الفلاسفة - بيان تهافت الفلاسفة، وتناقضات أرباب الإلحاد والداروينية. أسرار الغيب: معضلة الشر والقدر - الحرية والإرادة - اليوم الآخر.</p>
+          </div>
+          <div class="resources-tabs">
+            <a href="#" class="resource-btn"><i class="fa-solid fa-book"></i> كتب ومراجع <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-file-lines"></i> مقالات وأبحاث <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-circle-play"></i> مرئيات ودروس <span class="resource-count">تصفح</span></a>
+          </div>
+        </div>
+
+        <!-- المحور 5 -->
+        <div class="axis-card">
+          <div class="axis-header">
+            <span class="axis-badge">المحور الخامس</span>
+            <h3 class="axis-title">قِصَّةُ الأَدْيَانِ — «نقد الأيديولوجيات وهدم الصنميات»</h3>
+            <p class="axis-description">مقارنة الأديان السماوية والشرقية الوثنية. نقد أزمة الحداثة والمادية الغربية، أزمة المعنى، والسيولة الأخلاقية والقيمية.</p>
+          </div>
+          <div class="resources-tabs">
+            <a href="#" class="resource-btn"><i class="fa-solid fa-book"></i> كتب ومراجع <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-file-lines"></i> مقالات وأبحاث <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-circle-play"></i> مرئيات ودروس <span class="resource-count">تصفح</span></a>
+          </div>
+        </div>
+
+        <!-- المحور 6 -->
+        <div class="axis-card">
+          <div class="axis-header">
+            <span class="axis-badge">المحور السادس</span>
+            <h3 class="axis-title">قِرَاءَاتٌ فِي الغَزْوِ الثَّقَافِيِّ</h3>
+            <p class="axis-description">المذاهب المعاصرة: حركة العصر الجديد - العلمانية، الليبرالية، الوجودية، الماركسية، البراجماتية، والإنسانوية.</p>
+          </div>
+          <div class="resources-tabs">
+            <a href="#" class="resource-btn"><i class="fa-solid fa-book"></i> كتب ومراجع <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-file-lines"></i> مقالات وأبحاث <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-circle-play"></i> مرئيات ودروس <span class="resource-count">تصفح</span></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 🟢 البوابة الثالثة -->
+    <div class="gate-block gate-3">
+      <div class="gate-title">
+        <i class="fa-solid fa-atom"></i>
+        <span>البوابة الثالثة: عمران الفكر وفلسفة العلوم</span>
+      </div>
+      <div class="axes-grid">
+
+        <!-- المحور 7 -->
+        <div class="axis-card">
+          <div class="axis-header">
+            <span class="axis-badge">المحور السابع</span>
+            <h3 class="axis-title">قِصَّةُ الحَضَارَةِ — «حركة الإنسان في التاريخ»</h3>
+            <p class="axis-description">أمجاد أهل الإسلام دراسة سننية. تاريخ التحولات الكبرى في أوروبا، ونقد الاستشراق والتحليل المنهجي للروايات التاريخية المغلوطة.</p>
+          </div>
+          <div class="resources-tabs">
+            <a href="#" class="resource-btn"><i class="fa-solid fa-book"></i> كتب ومراجع <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-file-lines"></i> مقالات وأبحاث <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-circle-play"></i> مرئيات ودروس <span class="resource-count">تصفح</span></a>
+          </div>
+        </div>
+
+        <!-- المحور 8 -->
+        <div class="axis-card">
+          <div class="axis-header">
+            <span class="axis-badge">المحور الثامن</span>
+            <h3 class="axis-title">المَنَهَجُ وَالحَقِيقَةُ — «العلم الطبيعي وسؤال الدهشة»</h3>
+            <p class="axis-description">نظرية المعرفة وضوابط المنهج التجريبي. اكتشافات الفيزياء والكونيات، الداروينية ونشأة الحياة، والحوار المتوازن مع الوحي الشريف.</p>
+          </div>
+          <div class="resources-tabs">
+            <a href="#" class="resource-btn"><i class="fa-solid fa-book"></i> كتب ومراجع <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-file-lines"></i> مقالات وأبحاث <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-circle-play"></i> مرئيات ودروس <span class="resource-count">تصفح</span></a>
+          </div>
+        </div>
+
+        <!-- المحور 9 -->
+        <div class="axis-card">
+          <div class="axis-header">
+            <span class="axis-badge">المحور التاسع</span>
+            <h3 class="axis-title">نَهْضَةُ الأُمَّةِ — «السنن الكونية لا تحابي أحداً»</h3>
+            <p class="axis-description">القوانين والسنن الإلهية المؤطرة لبعث الأمة الإسلامية وإعادة بناء دورها الحضاري والريادي في العالم.</p>
+          </div>
+          <div class="resources-tabs">
+            <a href="#" class="resource-btn"><i class="fa-solid fa-book"></i> كتب ومراجع <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-file-lines"></i> مقالات وأبحاث <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-circle-play"></i> مرئيات ودروس <span class="resource-count">تصفح</span></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 🟡 البوابة الرابعة -->
+    <div class="gate-block gate-4">
+      <div class="gate-title">
+        <i class="fa-solid fa-scale-balanced"></i>
+        <span>البوابة الرابعة: الشريعة والمناعة الداخلية</span>
+      </div>
+      <div class="axes-grid">
+
+        <!-- المحور 10 -->
+        <div class="axis-card">
+          <div class="axis-header">
+            <span class="axis-badge">المحور العاشر</span>
+            <h3 class="axis-title">رُوحُ التَّشْرِيعِ الإِسْلَامِيِّ — «منظومة الحلال والحرام»</h3>
+            <p class="axis-description">فلسفة الأحكام وحكمة العبادات ومقاصد الشريعة، نقد الفلسفات الوضعية، والرد المنهجي على شبهات العقوبات الشرعية.</p>
+          </div>
+          <div class="resources-tabs">
+            <a href="#" class="resource-btn"><i class="fa-solid fa-book"></i> كتب ومراجع <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-file-lines"></i> مقالات وأبحاث <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-circle-play"></i> مرئيات ودروس <span class="resource-count">تصفح</span></a>
+          </div>
+        </div>
+
+        <!-- المحور 11 -->
+        <div class="axis-card">
+          <div class="axis-header">
+            <span class="axis-badge">المحور الحادي عشر</span>
+            <h3 class="axis-title">مَقَالَاتُ أَهْلِ الإِسْلَامِ — «التعريف بالطوائف»</h3>
+            <p class="axis-description">دراسة نشأة وأعلام وأفكار الطوائف القديمة (الشيعة، المعتزلة، الأشاعرة، الصوفية) والحديثة (السلفية، القرآنيون، الحداثيون).</p>
+          </div>
+          <div class="resources-tabs">
+            <a href="#" class="resource-btn"><i class="fa-solid fa-book"></i> كتب ومراجع <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-file-lines"></i> مقالات وأبحاث <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-circle-play"></i> مرئيات ودروس <span class="resource-count">تصفح</span></a>
+          </div>
+        </div>
+
+        <!-- المحور 12 -->
+        <div class="axis-card">
+          <div class="axis-header">
+            <span class="axis-badge">المحور الثاني عشر</span>
+            <h3 class="axis-title">حُصُونُنَا مُهَدَّدَةٌ مِنْ الدَّاخِلِ</h3>
+            <p class="axis-description">المناعة الفكرية من أعداء الداخل: الكشف عن دعاة الضلالة والشبهات الداخلية ونقد الانحرافات الفكرية المنتسبة للإسلام.</p>
+          </div>
+          <div class="resources-tabs">
+            <a href="#" class="resource-btn"><i class="fa-solid fa-book"></i> كتب ومراجع <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-file-lines"></i> مقالات وأبحاث <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-circle-play"></i> مرئيات ودروس <span class="resource-count">تصفح</span></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 🟣 البوابة الخامسة -->
+    <div class="gate-block gate-5">
+      <div class="gate-title">
+        <i class="fa-solid fa-people-roof"></i>
+        <span>البوابة الخامسة: العائلة تصنع الإنسان أو كومة عقد</span>
+      </div>
+      <div class="axes-grid">
+
+        <!-- المحور 13 -->
+        <div class="axis-card">
+          <div class="axis-header">
+            <span class="axis-badge">المحور الثالث عشر</span>
+            <h3 class="axis-title">أَنْتِ أَيْضًا صَحَابِيَّةٌ — «معمار المرأة والأسرة»</h3>
+            <p class="axis-description">مكانة المرأة في الإسلام، تفكيك المركزية النسوية الغربية، وفنون تربية وحماية الأولاد والبنات في زمن الانفجار المعلوماتي.</p>
+          </div>
+          <div class="resources-tabs">
+            <a href="#" class="resource-btn"><i class="fa-solid fa-book"></i> كتب ومراجع <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-file-lines"></i> مقالات وأبحاث <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-circle-play"></i> مرئيات ودروس <span class="resource-count">تصفح</span></a>
+          </div>
+        </div>
+
+        <!-- المحور 14 -->
+        <div class="axis-card">
+          <div class="axis-header">
+            <span class="axis-badge">المحور الرابع عشر</span>
+            <h3 class="axis-title">السَّلَامُ لِقَلْبِك — «معمار الذات والحرية الرقمية»</h3>
+            <p class="axis-description">ترميم القلق الوجودي والوعي النفسي الإيماني. فتنة يوسف: آليات التعافي من الإدمان الرقمي والإباحية عبر الشريعة وعلم النفس.</p>
+          </div>
+          <div class="resources-tabs">
+            <a href="#" class="resource-btn"><i class="fa-solid fa-book"></i> كتب ومراجع <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-file-lines"></i> مقالات وأبحاث <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-circle-play"></i> مرئيات ودروس <span class="resource-count">تصفح</span></a>
+          </div>
+        </div>
+
+        <!-- المحور 15 -->
+        <div class="axis-card">
+          <div class="axis-header">
+            <span class="axis-badge">المحور الخامس عشر</span>
+            <h3 class="axis-title">صِنَاعَةُ النَّجَاحِ — «سيكولوجية الانضباط والارتقاء»</h3>
+            <p class="axis-description">التنمية الذاتية: قوة الإرادة، تعديل السلوك، إدارة الوقت، وأسباب النجاح الشخصي في خلافة الأرض والارتقاء الحضاري.</p>
+          </div>
+          <div class="resources-tabs">
+            <a href="#" class="resource-btn"><i class="fa-solid fa-book"></i> كتب ومراجع <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-file-lines"></i> مقالات وأبحاث <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-circle-play"></i> مرئيات ودروس <span class="resource-count">تصفح</span></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 🧡 البوابة السادسة -->
+    <div class="gate-block gate-6">
+      <div class="gate-title">
+        <i class="fa-solid fa-compass"></i>
+        <span>البوابة السادسة: الهداية والتثقيف المنهجي</span>
+      </div>
+      <div class="axes-grid">
+
+        <!-- المحور 16 -->
+        <div class="axis-card">
+          <div class="axis-header">
+            <span class="axis-badge">المحور السادس عشر</span>
+            <h3 class="axis-title">حِلْيَةُ الرّجال النُّبَلَاءِ — «فلسفة القيم»</h3>
+            <p class="axis-description">صناعة الإرادة والجانب السلوكي لدى الشباب القرآني لمواجهة التحديات. التأسيس القرآني والنبوي للقيم الإنسانية.</p>
+          </div>
+          <div class="resources-tabs">
+            <a href="#" class="resource-btn"><i class="fa-solid fa-book"></i> كتب ومراجع <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-file-lines"></i> مقالات وأبحاث <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-circle-play"></i> مرئيات ودروس <span class="resource-count">تصفح</span></a>
+          </div>
+        </div>
+
+        <!-- المحور 17 -->
+        <div class="axis-card">
+          <div class="axis-header">
+            <span class="axis-badge">المحور السابع عشر</span>
+            <h3 class="axis-title">المِيْلادُ الجَديدُ — «شهادات العودة للحياة»</h3>
+            <p class="axis-description">وثائقيات وتجارب رحلة الأجانب — نساءً ورجالاً — من مختلف الثقافات والدول إلى نور الإسلام واليقين.</p>
+          </div>
+          <div class="resources-tabs">
+            <a href="#" class="resource-btn"><i class="fa-solid fa-book"></i> كتب ومراجع <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-file-lines"></i> مقالات وأبحاث <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-circle-play"></i> مرئيات ودروس <span class="resource-count">تصفح</span></a>
+          </div>
+        </div>
+
+        <!-- المحور 18 -->
+        <div class="axis-card">
+          <div class="axis-header">
+            <span class="axis-badge">المحور الثامن عشر</span>
+            <h3 class="axis-title">خَزَانَةُ المُثَقَّفِ — «الرقي في سماوات الشريعة»</h3>
+            <p class="axis-description">المنهجية العلمية للشباب لتحصيل العلوم الإسلامية الصحيحة ومسارات القراءة المنهجية في مختلف مجالات المعرفة.</p>
+          </div>
+          <div class="resources-tabs">
+            <a href="#" class="resource-btn"><i class="fa-solid fa-book"></i> كتب ومراجع <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-file-lines"></i> مقالات وأبحاث <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-circle-play"></i> مرئيات ودروس <span class="resource-count">تصفح</span></a>
+          </div>
+        </div>
+
+        <!-- المحور 19 -->
+        <div class="axis-card">
+          <div class="axis-header">
+            <span class="axis-badge">المحور التاسع عشر</span>
+            <h3 class="axis-title">مَعَارِجُ الوعْيِ — «القراءة المنهجية المتقدمة»</h3>
+            <p class="axis-description">بناء ملكة النقد التفكيكي والتأسيس المعرفي الموسع للباحث المسلم المعاصر ومطالعة أمهات الكتب المتقدمة.</p>
+          </div>
+          <div class="resources-tabs">
+            <a href="#" class="resource-btn"><i class="fa-solid fa-book"></i> كتب ومراجع <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-file-lines"></i> مقالات وأبحاث <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-circle-play"></i> مرئيات ودروس <span class="resource-count">تصفح</span></a>
+          </div>
+        </div>
+
+        <!-- المحور 20 -->
+        <div class="axis-card">
+          <div class="axis-header">
+            <span class="axis-badge">المحور العشرون</span>
+            <h3 class="axis-title">نُورُ الحِكْمَةِ — «خاتمة المسارات والمعالي»</h3>
+            <p class="axis-description">مُجمل الرؤية الفكرية لمنصة معمار الوحي وإرشادات للتطبيق العملي والدعوي وبناء الشخصية المسلمة المتكاملة.</p>
+          </div>
+          <div class="resources-tabs">
+            <a href="#" class="resource-btn"><i class="fa-solid fa-book"></i> كتب ومراجع <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-file-lines"></i> مقالات وأبحاث <span class="resource-count">تصفح</span></a>
+            <a href="#" class="resource-btn"><i class="fa-solid fa-circle-play"></i> مرئيات ودروس <span class="resource-count">تصفح</span></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- تذييل المنصة -->
+  <footer>
+    <div class="footer-quran">﴿سَنُرِيهِمْ آيَاتِنَا فِي الْآفَاقِ وَفِي أَنفُسِهِمْ حَتَّىٰ يَتَبَيَّنَ لَهُمْ أَنَّهُ الْحَقُّ﴾</div>
+    <div class="footer-rights">جميع الحقوق محفوظة © منصة معمار الوحي 2026</div>
+  </footer>
+
+  <!-- جافاسكريبت للفلترة والبحث السريع -->
+  <script>
+    function filterAxes() {
+      let input = document.getElementById('searchInput').value.toLowerCase();
+      let cards = document.getElementsByClassName('axis-card');
+
+      for (let i = 0; i < cards.length; i++) {
+        let text = cards[i].innerText.toLowerCase();
+        if (text.includes(input)) {
+          cards[i].style.display = "flex";
+        } else {
+          cards[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+
