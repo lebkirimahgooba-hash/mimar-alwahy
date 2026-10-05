@@ -38,4 +38,56 @@ header{text-align:center;padding:60px 20px 40px}
 footer{text-align:center;padding:50px 20px;border-top:1px solid rgba(212,175,55,.2);margin-top:80px;background:rgba(5,8,15,.9)}
 .footer-quran{font-size:1.4rem;color:var(--gold-light);margin-bottom:15px}
 .footer-rights{font-size:.95rem;color:var(--text-muted)}
-@media(max-width:768px){.gate-title{font-size:1.4rem}.axis-title{font-size:1.4rem}.axis-card{padding:22px}}
+@media(max-width:768px){.gate-title{font-size:1.4rem}.axis-title{font-size:1.4rem}.axis-card{padding:22px}}.book-card {
+  display: flex;
+  gap: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 15px;
+  margin-top: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.book-cover {
+  width: 110px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+}
+
+.book-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.book-title {
+  margin: 0 0 5px 0;
+  color: #1e293b;
+  font-size: 1.2rem;
+}
+
+.book-author, .book-info, .book-description {
+  margin: 3px 0;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.btn-read {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #0d9488;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  transition: background-color 0.2s;
+}
+
+.btn-read:hover {
+  background-color: #0f766e;
+}
